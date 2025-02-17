@@ -1,7 +1,7 @@
 {
   "name": "My buttons",
   "short_name": "Buttons",
-  "start_url": "/index.html",
+  "start_url": "https://aizikyonatan.github.io/Buttons/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
