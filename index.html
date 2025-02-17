@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyInstants Sound Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Default font for the body */
+        }
+        h1 {
+            font-size: 32px; /* Increased font size for the title */
+            color: #333; /* Change font color */
+            text-align: right; /* Align text to the right */
+            margin-right: 20px; /* Optional: Add some margin to the right */
+        }
+        .watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px; /* Align watermark to the right */
+            opacity: 0.5;
+            font-size: 20px;
+            color: black;
+        }
+        .button-container {
+            display: flex; /* Use flexbox to arrange buttons horizontally */
+            gap: 10px; /* Reduced space between buttons */
+            flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+        }
+        iframe {
+            width: 110px; /* Set iframe width */
+            height: 200px; /* Set iframe height */
+            border: none; /* Remove border */
+        }
+        button {
+            width: 110px; /* Set button width */
+            height: 50px; /* Set button height */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            font-size: 16px; /* Increase font size */
+        }
+    </style>
+    <script>
+        let currentAudio = null;
+
+        function playSound(url) {
+            // Stop the currently playing audio if there is one
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0; // Reset to the start
+            }
+
+            // Create a new audio object and play it
+            currentAudio = new Audio(url);
+            currentAudio.play().catch(error => {
+                console.error("Error playing sound:", error);
+            });
+        }
+
+        function refreshPage() {
+            location.reload(); // Reload the current page
+        }
+    </script>
+</head>
+<body>
+    <h1>בבקשה אל תלחצו על הכפתור האפור</h1>
+    
+    <div class="button-container">
+        <!-- Tuco Get Out Sound -->
+        <iframe src="https://www.myinstants.com/instant/tuco-get-out-30566/embed/" frameborder="0" scrolling="no" onclick="playSound('https://www.myinstants.com/media/sounds/tuco-get-out-30566.mp3')"></iframe>
+
+        <!-- Sad Violin Sound -->
+        <iframe src="https://www.myinstants.com/instant/sad-violin-the-meme-one/embed/" frameborder="0" scrolling="no" onclick="playSound('https://www.myinstants.com/media/sounds/sad-violin-the-meme-one.mp3')"></iframe>
+
+        <!-- Vine Boom Sound -->
+        <iframe src="https://www.myinstants.com/instant/vine-boom-sound-70972/embed/" frameborder="0" scrolling="no" onclick="playSound('https://www.myinstants.com/media/sounds/vine-boom-sound-70972.mp3')"></iframe>
+
+        <!-- Sad Meow Song Sound -->
+        <iframe src="https://www.myinstants.com/instant/sad-meow-song-88771/embed/" frameborder="0" scrolling="no" onclick="playSound('https://www.myinstants.com/media/sounds/sad-meow-song-88771.mp3')"></iframe>
+
+        <!-- HKPTVR HPVR Sound -->
+        <iframe src="https://www.myinstants.com/instant/hkptvr-hpvr-58885/embed/" frameborder="0" scrolling="no" onclick="playSound('https://www.myinstants.com/media/sounds/hkptvr-hpvr-58885.mp3')"></iframe>
+
+        <!-- Gary Meow Sound -->
+        <iframe src="https://www.myinstants.com/instant/gary-meow-39355/embed/" frameborder="0" scrolling="no" onclick="playSound('https://www.myinstants.com/media/sounds/gary-meow-39355.mp3')"></iframe>
+    </div>
+
+    <!-- Refresh Button -->
+    <button onclick="refreshPage()">Refresh</button>
+
+    <!-- Watermark -->
+    <div class="watermark">יונתן המלך</div>
+</body>
+</html>
